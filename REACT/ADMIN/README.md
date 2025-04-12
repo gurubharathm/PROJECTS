@@ -56,14 +56,18 @@ Create react app “admin” with typescript
 ### Install material Ui
 `npm install @mui/material`
 `npm i @material-ui/core`??
+`npm install @mui/material @emotion/react @emotion/styled`??
 
+# CLEAR compile issues
+step1: delete node_modules & package-lock.json
+step2: `npm install`
+OR
+`npm install react-scripts@latest` -- solve issue
 
 
 ### Prerequisites to run this project
 # Install react scripts
-npm i react-scripts --save --force
-
-
+`npm i react-scripts --save --force`
 
 ### Fix the upstream dependency conflict, or retry
 When encountering an upstream dependency conflict, you can try the following steps:
@@ -85,10 +89,7 @@ or
 
 
 Step 5: Update dependencies
-
-bash
-npm update
-
+`npm update`
 
 If none of these steps resolve the issue, you may need to manually resolve the dependency conflict by adjusting the versions of the conflicting dependencies in your package.json file.
 

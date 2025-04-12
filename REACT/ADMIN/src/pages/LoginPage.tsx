@@ -14,10 +14,10 @@ const defaultCredentials = {
   password: 'password',
 };
 
-const Login: React.FC<LoginProps> = ({ onLogin }) => {
+const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
   const [form, setForm] = useState<LoginForm>({
-    username: '',
-    password: '',
+    username: 'admin',
+    password: 'password',
   });
 
   const [error, setError] = useState<string>('');
@@ -69,10 +69,9 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         <button type="submit">Login</button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
-      <p>Default credentials: username = admin, password = password</p>
     </div>
   );
 };
 
-export default Login;
+export default LoginPage;
 

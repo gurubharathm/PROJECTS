@@ -12,8 +12,11 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route path='/' element={<LoginWrapper />}  />
+          <Route path='/logout' element={<LoginWrapper />}  />
           <Route element={<AdminLayout />}>
             <Route path='/dashboard' element={<DashboardPage />}  />
+            <Route path='/settings/profile' element={<LoginWrapper />}  />
+            <Route path='/settings/security' element={<LoginWrapper />}  />
           </Route>
         </Routes>
         
