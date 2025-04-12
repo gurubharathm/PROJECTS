@@ -4,6 +4,7 @@ swaggerJsdoc = require("swagger-jsdoc"),
 swaggerUi = require("swagger-ui-express");
 const cors = require('cors');
 const mysql = require('mysql');
+require('dotenv').config();
 
 const app = express ();
 app.use(express.json());
@@ -54,6 +55,8 @@ app.use(cors(), function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
+// Swagger URL: localhost:8888/api
 app.use(
   "/api",
   swaggerUi.serve,
@@ -72,12 +75,12 @@ app.use(function(req, res, next) {
 
 
 var db = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "Pass#6060",
-  database: "omniguru",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
   multipleStatements: true, // helps for stored procedures
-  port: 6060,
+  port: process.env.DB_PORT,
 });
 db.connect(function(err) {
   if (err) throw err;
