@@ -1,12 +1,12 @@
 /**
  * @swagger
  * tags:
- *   name: Pages
+ *   name: Table
  *   description: The books managing API
- * /pages:
+ * /table:
  *   get:
  *     summary: Lists all the books
- *     tags: [Pages]
+ *     tags: [Table]
  *     responses:
  *       200:
  *         description: The list of the books
@@ -18,7 +18,7 @@
  *                 $ref: '#/components/schemas/Book'
  *   post:
  *     summary: Create a new book
- *     tags: [Pages]
+ *     tags: [Table]
  *     requestBody:
  *       required: true
  *       content:
@@ -34,10 +34,10 @@
  *               $ref: '#/components/schemas/Book'
  *       500:
  *         description: Some server error
- * /books/{id}:
+ * /table/{id}:
  *   get:
  *     summary: Get the book by id
- *     tags: [Pages]
+ *     tags: [Table]
  *     parameters:
  *       - in: path
  *         name: id
@@ -52,49 +52,6 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Book'
- *       404:
- *         description: The book was not found
- *   put:
- *    summary: Update the book by the id
- *    tags: [Pages]
- *    parameters:
- *      - in: path
- *        name: id
- *        schema:
- *          type: string
- *        required: true
- *        description: The book id
- *    requestBody:
- *      required: true
- *      content:
- *        application/json:
- *          schema:
- *            $ref: '#/components/schemas/Book'
- *    responses:
- *      200:
- *        description: The book was updated
- *        content:
- *          application/json:
- *            schema:
- *              $ref: '#/components/schemas/Book'
- *      404:
- *        description: The book was not found
- *      500:
- *        description: Some error happened
- *   delete:
- *     summary: Remove the book by id
- *     tags: [Pages]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string
- *         required: true
- *         description: The book id
- *
- *     responses:
- *       200:
- *         description: The book was deleted
  *       404:
  *         description: The book was not found
  */
